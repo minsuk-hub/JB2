@@ -1,8 +1,7 @@
 package com.oliverdunk.jb2.exceptions;
 
 /**
- * Represents any error which is returned by the B2 API, and is thrown as a RuntimeException in order to give
- * clients the ability to fail gracefully.
+ * B2 API에서 반환하는 모든 오류를 나타내며, 클라이언트가 gracefully하게 실패할 수 있는 기능을 제공하기 위해 RuntimeException으로 던져집니다.
  */
 public class B2APIException extends RuntimeException {
 
@@ -10,63 +9,63 @@ public class B2APIException extends RuntimeException {
     private int statusCode;
 
     /**
-     * Constructs new B2APIException with the specified errorMessage.
+     * 지정된 errorMessage로 새로운 B2APIException을 생성합니다.
      *
-     * @param errorMessage An error message describing what went wrong
+     * @param errorMessage 발생한 문제에 대한 오류 메시지
      */
     public B2APIException(String errorMessage){
         setErrorMessage(errorMessage);
     }
 
     /**
-     * Sets the status code for this exception.
+     * 이 예외의 상태 코드를 설정합니다.
      *
-     * @param statusCode The B2 error status represented by this exception
+     * @param statusCode 이 예외로 표현된 B2 오류 상태
      */
     public void setStatusCode(int statusCode){
         this.statusCode = statusCode;
     }
 
     /**
-     * Sets the identifier for this exception.
+     * 이 예외의 식별자를 설정합니다.
      *
-     * @param identifier The B2 error code represented by this exception
+     * @param identifier 이 예외로 표현된 B2 오류 코드
      */
     public void setIdentifier(String identifier){
         this.identifier = identifier;
     }
 
     /**
-     * Sets the error message for this exception.
+     * 이 예외의 오류 메시지를 설정합니다.
      *
-     * @param errorMessage An error message describing what went wrong
+     * @param errorMessage 발생한 문제에 대한 오류 메시지
      */
     public void setErrorMessage(String errorMessage){
         this.errorMessage = errorMessage;
     }
 
     /**
-     * Returns the status code for this exception.
+     * 이 예외의 상태 코드를 반환합니다.
      *
-     * @return The B2 error status represented by this exception
+     * @return 이 예외로 표현된 B2 오류 상태
      */
     public int getStatusCode(){
         return statusCode;
     }
 
     /**
-     * Returns the identifier for this exception.
+     * 이 예외의 식별자를 반환합니다.
      *
-     * @return The B2 error code represented by this exception
+     * @return 이 예외로 표현된 B2 오류 코드
      */
     public String getIdentifier(){
         return identifier;
     }
 
     /**
-     * Returns the error message for this exception.
+     * 이 예외의 오류 메시지를 반환합니다.
      *
-     * @return An error message describing what went wrong
+     * @return 발생한 문제에 대한 오류 메시지
      */
     public String getErrorMessage(){
         return errorMessage;
